@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% if current_user.is_authenticated %}
+{% if posts|length == 0 %}
+<h2 style="text-align: center">There are no posts. Make one now!</h2>
+{% else %}
+<h2 class="mainHead">Game Chatter</h2>
+<div class="allPosts">
+    {% for post in posts %}
+    <div class="post">
+        <h3 class="postUser">{{post.uder.display_name}} <span>@{{ post.user.username }}</span></h3>
+        <p class="postBody">{{ post.body }}</p>
+        <div class="postButton">
+            <p>{{ post.replies|length }} Replies</p>
+            <p>|</p>
+            <p href="/post/{{ post.id }}">View Replies</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% else %}
+<p><a href="/login">Login</a> to view Posts</p>
+{% endif %}
+
+{% endblock %}
