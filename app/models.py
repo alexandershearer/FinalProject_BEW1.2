@@ -6,10 +6,12 @@ import enum
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(30), nullable=False)
     body = db.Column(db.String(280), nullable=False)
+    image = db.Column(db.String(300), nullable=False)
     publish_date = db.Column(db.Date)
 
-    replies - db.relationship('Reply', back_populates='post')
+    replies = db.relationship('Reply', back_populates='post')
 
     user = db.relationship('User', back_populates='posts')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -23,7 +25,7 @@ class Reply(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     post = db.relationship('Post', back_populates='replies')
-    post_id = db.Column(db.Integer, db.ForeignKey('post_id'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)

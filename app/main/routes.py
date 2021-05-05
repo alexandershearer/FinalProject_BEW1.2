@@ -3,7 +3,7 @@ from flask_login import login_user, logout_user, login_required, current_user
 from datetime import date, datetime
 
 from app.models import Post, Reply
-from app.main.forms import PostForm, ReplyForm
+from app.main.forms import GameForm, ReplyForm
 
 from app import app, db
 
@@ -20,11 +20,13 @@ def homepage():
 @main.route('/make_post', methods=['GET', 'POST'])
 @login_required
 def make_post():
-    form = PostForm()
+    form = GameForm()
 
-    if form.validate_on_submit()
+    if form.validate_on_submit():
         post = Post(
+            title=form.title.data,
             body=form.body.data,
+            image=form.image.data,
             publish_date=date.today(),
             user=current_user
         )
@@ -46,7 +48,7 @@ def post_detail(post_id):
     return render_template('post.html', post=post, replies=replies, form=form)
 
 
-@main.route('/post/<post_id>')
+@main.route('/reply/<post_id>', methods=['POST'])
 @login_required
 def post_reply(post_id):
     form = ReplyForm()

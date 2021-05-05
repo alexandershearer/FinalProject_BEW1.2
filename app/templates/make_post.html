@@ -6,7 +6,15 @@
 
 <form action='/make_post' method="POST" class="makePost">
     {{ form.csrf_token }}
+
+    {{ form.title.label }}
+    {{ form.title }}
+
+    {{ form.body.label }}
     {{ form.body }}
+
+    {{ form.image.label }}
+    {{ form.image }}
 
     {% for error in form.body.errors %}
     <p>{{error}}</p>

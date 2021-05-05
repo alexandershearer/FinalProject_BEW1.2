@@ -1,1 +1,23 @@
 /* Add styles here. */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.makePost{
+    font-size: x-large;
+}
+.authItems{
+    display: flex;
+}
+
+.authItems p{
+    margin: 0;
+}
+
+.navItems a{
+}
+
+.postImage{
+    height: 300px;
+}

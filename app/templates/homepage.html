@@ -11,12 +11,13 @@
 <div class="allPosts">
     {% for post in posts %}
     <div class="post">
-        <h3 class="postUser">{{post.uder.display_name}} <span>@{{ post.user.username }}</span></h3>
+        <h3 class="postUser">{{post.user.display_name}} <span>@{{ post.user.username }}</span></h3>
+        <img class="postImage" src="{{ post.image }}" alt="">
         <p class="postBody">{{ post.body }}</p>
         <div class="postButton">
             <p>{{ post.replies|length }} Replies</p>
             <p>|</p>
-            <p href="/post/{{ post.id }}">View Replies</p>
+            <a href="/post/{{ post.id }}">View Replies</a>
         </div>
     </div>
     {% endfor %}
