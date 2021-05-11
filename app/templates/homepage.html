@@ -7,7 +7,6 @@
 {% if posts|length == 0 %}
 <h2 style="text-align: center">There are no posts. Make one now!</h2>
 {% else %}
-<h2 class="mainHead">Game Chatter</h2>
 <div class="allPosts">
     {% for post in posts %}
     <div class="post">
@@ -24,7 +23,7 @@
 </div>
 {% endif %}
 {% else %}
-<p><a href="/login">Login</a> to view Posts</p>
+<p class="signupGreeting"><a href="/login">Login</a> to view Posts</p>
 {% endif %}
 
 {% endblock %}

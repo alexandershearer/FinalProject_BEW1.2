@@ -1,12 +1,32 @@
 /* Add styles here. */
+html, body{
+    background: rgb(0,168,205);
+    background: linear-gradient(130deg, rgba(0,168,205,1) 0%, rgba(172,84,210,1) 100%);
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+a{
+    color: white;
+}
+
 .navbar{
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid rgb(3, 3, 3);
+    padding: 10px 20px;
+    font-size: large;
+    background-color: rgba(255, 255, 255, 0.356);
+    -webkit-box-shadow: 10px 7px 41px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 7px 41px -13px rgba(0,0,0,0.75);
+    box-shadow: 10px 7px 41px -13px rgba(0,0,0,0.75);
+}
+.navbar a{
+    color: black;
 }
 
-.makePost{
-    font-size: x-large;
-}
 .authItems{
     display: flex;
 }
@@ -15,9 +35,75 @@
     margin: 0;
 }
 
+.authForm{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.authInput{
+    margin: 10px 10px;
+}
+
 .navItems a{
 }
 
+.signupGreeting{
+    text-align: center;
+}
+
 .postImage{
-    height: 300px;
+    max-height: 300px;
+    max-width: 550px;
+    width: 90%;
+    border: 1px solid rgb(0, 0, 0);
+    -webkit-box-shadow: 10px 7px 41px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 7px 41px -13px rgba(0,0,0,0.75);
+    box-shadow: 10px 7px 41px -13px rgba(0,0,0,0.75);
+}
+
+
+/* */
+
+.makePostNav{
+    font-size: x-large;
+}
+
+.allPosts{
+    text-align: center;
+}
+.post{
+    border-bottom: 3px solid rgb(15, 15, 15);
+    padding-bottom: 20px;
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+.postView{
+    text-align: center;
+}
+
+
+.makePost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 550px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.makePost input{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.makePost input[type=submit]{
+    max-width: 75px;
+    width: 90%;
+    margin: 0 auto;
 }

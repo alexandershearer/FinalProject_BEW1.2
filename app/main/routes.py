@@ -15,7 +15,10 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def homepage():
     all_posts = Post.query.all()
-    return render_template('homepage.html', posts=all_posts)
+    new_arr = []
+    for post in all_posts:
+        new_arr.insert(0, post)
+    return render_template('homepage.html', posts=new_arr)
 
 @main.route('/make_post', methods=['GET', 'POST'])
 @login_required
